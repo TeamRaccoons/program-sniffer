@@ -81,18 +81,17 @@ async function main() {
 
   // First 8 bytes, account descriptor
   // bad bad, do better
-  console.log("price offset:", state.data.indexOf(priceBuffer));
-  console.log("timestamp offset:", state.data.indexOf(timestamp.toBuffer()));
   console.log(
     "seller pk offset:",
     state.data.indexOf(getIxAccountPk(message, 0, 0).toBuffer())
   );
-  console.log("ta pk offset:", state.data.indexOf(ta.toBuffer()));
+  console.log("price offset:", state.data.indexOf(priceBuffer));
   console.log(
     "mint pk offset:",
     state.data.indexOf(getIxAccountPk(message, 0, 4).toBuffer())
   );
-  // ...
+  console.log("ta pk offset:", state.data.indexOf(ta.toBuffer()));
+  console.log("timestamp offset:", state.data.indexOf(timestamp.toBuffer()));
 }
 
 main();
